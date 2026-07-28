@@ -1,3 +1,3 @@
 git : 
 main => architecture files
-server => create server
+server => create server, create connect supabase and mongodb
