@@ -1,0 +1,3 @@
+git : 
+main => architecture files
+server => create server
