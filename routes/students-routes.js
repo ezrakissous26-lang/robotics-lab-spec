@@ -1,9 +1,10 @@
 import express from 'express'
 import { createStudent, getById } from '../repos/students-repo.js'
+import { checkBody } from '../middlewares/students-middleware.js'
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', checkBody, async (req, res) => {
     const student = req.body
     const result = await createStudent(student)
     console.log(result)
