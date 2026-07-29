@@ -11,12 +11,20 @@ router.post('/', checkBody, async (req, res) => {
     res.status(201).json({id: result.insertedId})
 })
 
-router.get('/:usersId', checkStudentExist ,async (req, res) => {
-    const objectId = req.params
-    console.log(objectId)
-    const result = await getById(objectId.usersId)
-    console.log(result)
-    res.status(200).json(result)
+router.get('/:usersId', async (req, res) => {
+    const { usersId } = req.params
+    const result = await getById(usersId)
+    if (!result || result.length === 0) {
+        return res.status(404).json({ error: 'Student not found' })
+    }
+    const student = result[0]
+    return res.status(200).json({
+        id: student._id,
+        firstName: student.firstName,
+        lastName: student.lastName,
+        className: student.className,
+        labSessionsIds: student.labSessionsIds
+    })
 })
 
 export default router
