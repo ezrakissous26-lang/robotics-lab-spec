@@ -47,6 +47,16 @@ export async function updateLabSessionIds(studentId, sessionId) {
     }
 }
 
+export async function countBySessionId(sessionId) {
+    try {
+        const count = await students.countDocuments({ labSessionsIds: sessionId })
+        return count
+    } catch (e) {
+        console.error('Error :', e.message)
+        return 0
+    }
+}
+
 
 //await createStudents()
 // await getById('6a68f118256acaffc50518d2')

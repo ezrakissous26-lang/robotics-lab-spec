@@ -15,8 +15,8 @@ export async function getById(id) {
     const { data, error } = await supabase.from('sessions').select().eq('id', id)
     if (error) {
         console.error('Failed:', error)
+        return error
     } else {
-        console.log(data)
         return data
     }
 }
