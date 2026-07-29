@@ -106,8 +106,8 @@ robotic-lab-spec/
 │   └── students-routes.js
 │
 ├── services/
-│   ├── lab-services.js
-│   └── students-services.js
+│   ├── lab-services.js         empty
+│   └── students-services.js    empty
 │
 └── server.js
 ```
@@ -198,15 +198,6 @@ Success response:
 * Student registration update
 
 ---
-
-## Not Implemented Yet
-
-* Duplicate registration handling
-* Session capacity verification
-* Concurrent registration management with `Promise.all`
-* `registeredCount` calculation
-* `remainingSpots` calculation
-* Full service layer implementation
 
 ---
 
